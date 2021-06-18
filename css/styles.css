@@ -5,6 +5,7 @@
 html,
 body {
   position: relative;
+  height: 100%;
 }
 
 body {
@@ -48,17 +49,23 @@ footer {
 /* ================================== */
 
 .tile {
-  /* TODO: MODULE_CARDS */
-  /* 1. Fill in the required properties. */
+  width: 100%;
+  display: inline-block;
+	box-sizing: border-box;
+	background: #fff;		
+  
 }
 .tile img {
-  /* TODO: MODULE_CARDS */
-  /* 1. Fill in the required properties. */
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  padding: 0;
+  object-fit: cover;
 }
 .tile img:hover {
-  /* TODO: MODULE_CARDS */
-  /* 1. Fill in the required properties. */
+  filter: brightness(0.5);
 }
+
 
 /* Hint: Notice the position:absolute and z-index properties. */
 /* Think about how those in relation to the existing "tile" classes. */
@@ -67,16 +74,37 @@ footer {
   z-index: 1;
   text-transform: uppercase;
   letter-spacing: 2px;
+  position: absolute;
+  /* top: 15px; */
+  bottom: 10px;
+  right: 0;
+  text-align: center;
+  z-index: 9;
+  color: #fff;
+  width: 100%;
+  height: auto;
+  
 }
-
 .hero-image {
   /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url("/assets/hero.jpg");
+    height: 50%;
+    position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0 16px;
 
-  /* TODO: MODULE_LAYOUT */
-  /* 1. Set a specific height. */
-  /* 2. Position and center the image to scale nicely on all screens. */
+}
+.hero-text{
+  position:absolute;
+  color: #fff;
+ left: 50%;
+ top: 50%;
+ text-align: center;
+ transform: translate(-50%, -50%);
+
 }
 
 .hero-subheading {
@@ -84,7 +112,7 @@ footer {
   font-weight: 100;
 }
 .hero-input {
-  width: 80%;
+  width: 50vw;
   height: 50px;
   padding: 16px;
   border-radius: 8px;
@@ -101,16 +129,32 @@ footer {
 
 .adventure-card {
   /* TODO: MODULE_ADVENTURES_GRID */
-  /* 1. Fill in the required properties. */
+  height: 100%;
+  -webkit-transition: 2ms all;
+  border-top: 0px !important;
+  border-radius: .5rem !important;
 }
 .adventure-card img {
   /* TODO: MODULE_ADVENTURES_GRID */
-  /* 1. Fill in the required properties. */
+  height: 25vh;
+  width: 100%;
+  border-radius: .8rem .8rem 0 0;
+  object-fit: cover;
+}
+.adventure-card .price{
+  right: 20px;
+  position: absolute;
 }
 .adventure-card img:hover {
   /* TODO: MODULE_ADVENTURES_GRID */
-  /* 1. Fill in the required properties. */
+  -webkit-filter: brightness(50%);
+  /* -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease; */
 }
+.card-title {margin-bottom: 0px !important;}
 
 /* ================================== */
 /* Adventure details page CSS */
@@ -119,7 +163,8 @@ footer {
 .adventure-detail-card {
   /* TODO: MODULE_ADVENTURE_DETAILS */
   /* 1. Fill in the required properties. */
-
+  padding: 15px;
+  font-size: 14px;
 }
 
 .adventure-card-image {
@@ -128,13 +173,13 @@ footer {
 }
 .adventure-card-image:hover {
   /* TODO: MODULE_ADVENTURE_DETAILS */
-  /* 1. Fill in the required properties. */
+  -webkit-filter: brightness(50%);
 }
 .experience-content ul li {
   margin-left: 16px;
   padding: 0;
 }
-
+.adventure-detail-card li{margin: 0 15px;}
 @media only screen and (min-width: 768px) {
   /* For desktops phones: */
   #reservation {
